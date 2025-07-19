@@ -35,7 +35,7 @@ Get Alexandria up and running in three simple steps.
 Clone the repository and install the necessary dependencies.
 
 ```bash
-git clone [https://github.com/your-username/alexandria.git](https://github.com/your-username/alexandria.git)
+git clone https://github.com/hi-mundo/alexandria.git
 cd alexandria
 npm install
 ```
