@@ -1,0 +1,24 @@
+openapi: 3.0.0
+info:
+  title: Pokédex API
+  description: A simple API to get information about Pokémon.
+  version: 1.0.0
+
+# Define the base URL for all API calls
+servers:
+  - url: https://pokeapi.co/api/v2
+
+# Define available endpoints and methods
+paths:
+  /pokemon/{nameOrId}:
+    get:
+      summary: "Get information about a specific Pokémon by its name or ID"
+      description: "Fetch data for a single Pokémon, identified by its name (e.g., 'pikachu') or National Pokédex number (e.g., 25)."
+      operationId: getPokemonByNameOrId
+      parameters:
+        - name: nameOrId
+          in: path
+          required: true
+          description: "The Pokémon's name (lowercase) or Pokédex ID."
+          schema:
+            type: string

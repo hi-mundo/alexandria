@@ -1,0 +1,27 @@
+# Version of your protocol
+mcp_version: 1.0
+
+# Unique name for this context, used in the CLI
+context_name: pokedex_api
+
+# (Optional) Information about the owner
+owner:
+  name: "Professor Oak"
+  email: "prof.oak@pallet.town"
+
+# Block that defines which AI provider and models to use for this context
+model:
+  provider: gemini # can be 'openai' or 'gemini'
+  generation_model: gemini-2.0-flash
+  # embedding_model is not needed here, since the source is of type 'api' and does not use RAG.
+
+# Main block describing the data source
+source:
+  # The source type tells the framework to use "Function Calling" mode
+  type: api
+  
+  # Specific settings for the 'api' source type
+  spec:
+    format: openapi_v3
+    # Location of the file with the technical API specification
+    location: ./examples/specs/pokedex-api.yaml
